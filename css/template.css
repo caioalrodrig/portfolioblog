@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+header{
+    background: linear-gradient(170deg, #cab9eda1, #b6490057, #cab9eda1, #b6490048);
+
+}
+
+.top-bar{
+    padding: 10px;
+}
+.wp-post-image{
+    float: left;
+    margin: 0 15px 10px 0;
+}
+.blog article{
+    display: inline-block;
+}
+svg:hover {
+    transform: translateY(-20px); 
+    transition: transform 1s;
+}
+.nav-icon{
+    margin-left: 5px;
+    color: #ff8800;
+    
+}
+input{
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    border-color: #FFF;
+    width: 100px;
+    font-family: Arial;
+}
+.menu a{
+    text-decoration: none;
+    font-family: 'Share Tech Mono', monospace;
+    color: #251761;
+    font-weight: 500;
+
+}
+.menu li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px ;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: larger;
+}
+#menu-menu-topo{
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.logo{
+    font-family: 'Share Tech Mono';
+    font-size:38px;
+    color: #251761;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
+    font-weight: 500;
+}
+main{
+    background: radial-gradient(circle at center, #bdbdbdb6 40%, #D5CFC7 ),
+                linear-gradient(180deg,  #585858d0 1%, #bdbdbdb6 , #bdbdbd41 , #bdbdbdb6);   
+}
+#search{
+    color: #ffa200;
+}
+.title{
+    font-family: 'Share Tech Mono', monospace;
+    color: #251761;
+    font-weight: 500;
+}
+.title#t2{
+    margin: 80px 0 80px 0 ;
+    font-size: 40px;
+}
+.sub-title{
+    font-size:18px;
+}
+.bi{
+    position: relative;
+    top: -7px;
+}
+#img1{
+    max-width: 70vw;
+}
+.carousel-h{
+    position: relative;
+    top: -15px;
+}
+.services{
+    position: relative;
+    top: -8px;
+    padding-top: 20px;
+}
+.service-h7{
+    color: #251761;
+    font-weight: 500;
+    font-size: 24px;
+}
+.text-center{
+    margin-top: 60px;
+}
+.plan-card{
+    margin-left: 4vw;
+    padding-top: 10px;
+    min-width: 350px;
+}
+button.btn{
+    width: 200px;
+    margin-left: 50px;
+}
