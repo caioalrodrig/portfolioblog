@@ -20,6 +20,10 @@ function wppage_config(){
     );
     add_theme_support('custom-header', $args);
     add_theme_support('post-thumbnails');
+    add_theme_support('post-formats', array(
+        'video', 'image'
+    ));
+
 }
 add_action('after_setup_theme','wppage_config', 0);
 add_action('widgets_init','wppage_sidebars', 0);
@@ -46,4 +50,16 @@ function wppage_sidebars(){
                 'after_title' => '</h2>' 
             )
             );
+            register_sidebar(
+                array(
+                    'nome' => 'Service',
+                    'id' => 'service-1',
+                    'description' => 'First service area',
+                    'before_widget' => '<div class="widget-wrapper">',
+                    'after_widget' => '</div>',
+                    'before_title' => '<h2 class="widget-title">',
+                    'after_title' => '</h2>' 
+                )
+            );
+                
 }

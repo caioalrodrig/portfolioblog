@@ -3,6 +3,7 @@
     <main>
     <section class="middle-area">
         <?php get_sidebar('blog');?>
+
         <div class="news col-md-8">
             <?php
             if(have_posts()):

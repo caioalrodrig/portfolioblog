@@ -20,10 +20,8 @@
                 </svg>
             </div>
             <div class="search col-xl-3 col-sm-5 col-6 text-right">
-                <svg id="search" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                </svg>
-                <input placeholder="Pesquisar" type="text"></input>
+                <?php get_search_form();?>
+            </input>
             </div>
             </div>
         </div>
@@ -31,12 +29,24 @@
         <section class="menu-area">
         <div class="container">
             <div class="row">
-            <section class="logo col-md-6 col-12">Caio Rodrigues</section>
-            <nav class="menu col-md-6 text-right"> 
-                <div class="row">
-                <?php wp_nav_menu(array('theme_location' => 'my_main_menu')) ?>
+            <section class="logo col-8">Caio Rodrigues</section>
+            
+            <nav class="navbar col-4 navbar-expand-md bg-body-tertiary" id="menu-bs">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                <nav class="menu text-right"> 
+                    <div class="row ">
+                    <?php wp_nav_menu(array('theme_location' => 'my_main_menu')) ?>
+                    </div>
+                </nav> 
                 </div>
-            </nav> 
+            </div>
+            </nav>
+
+            
         </div>
         </div>
         </section>
