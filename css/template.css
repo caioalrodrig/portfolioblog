@@ -5,22 +5,26 @@ header{
     width: 100vw;
 }
 body{
-        width: 100vw;
-
+    width: 100vw;
 }
 .top-bar{
     padding: 10px;
 }
 .wp-post-image{
     float: left;
-    margin: 0 15px 10px 0;
+    margin: 4px 15px 10px 0;
+
+}
+.wp-featured-img{
+    float: none;
+    padding-top: 2vh;
 }
 .blog article{
     display: inline-block;
 }
-svg:hover {
-    transform: translateY(-20px); 
-    transition: transform 1s;
+.search-submit:hover {
+    transform: translateY(-15px); 
+    transition: transform 2s;
 }
 .nav-icon{
     margin-left: 5px;
@@ -30,12 +34,15 @@ svg:hover {
     background-color: #00000000 !important ;
     padding:0;
 }
-input{
-    background-color: #ffffff00;
-    border-color: #ffffff00;
-    border-color: #FFF;
+input:not(p input ){
+    background-color: #ffffff1d;
+    border: 1px solid #000000; 
     width: 100px;
-    font-family: Arial;
+    padding-bottom:0;
+    padding-top: 4px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
 }
 #menu-menu-topo a{
     text-decoration: none;
@@ -67,17 +74,29 @@ main{
     background: radial-gradient(circle at center, #bdbdbdb6 40%, #D5CFC7 ),
                 linear-gradient(180deg,  #585858d0 1%, #bdbdbdb6 , #bdbdbd41 , #bdbdbdb6);   
 }
-#search{
-    color: #ffa200;
+.search-submit{
+    border-radius: 4px;
+    padding-top: 8px;
+    height: 28px;
+    width: 25px;
+    background-color: #ffffff41 ;
+    border: 1px solid #000000; /* Uma borda sólida preta de 2 pixels */
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5); 
+    transform: translateY(4px);
 }
-.title{
+h1.title, h1.archive-title{
     font-family: 'Share Tech Mono', monospace;
     color: #251761;
-    font-weight: 500;
+    font-size: xx-large  !important;
+    margin-top: 5vh;
 }
+
 .title#t2{
     margin: 80px 0 80px 0 ;
-    font-size: 40px;
+    font-size: 34px;
+}
+.title#t1{
+    margin-bottom: 5vh;
 }
 .sub-title{
     font-size:18px;
@@ -88,6 +107,23 @@ main{
 }
 #img1{
     max-width: 70vw;
+    padding-top: 20px;
+    padding-bottom: 10vh;
+}
+.distorcer {
+    animation: inclinacao 6s linear infinite; 
+}
+
+@keyframes inclinacao {
+    0% {
+        transform: perspective(1000px) rotateY(0deg); 
+    }
+    50% {
+        transform: perspective(1000px) rotateY(30deg); 
+    }
+    100%{
+        transform: perspective(1000px) rotateY(0deg);    
+     }
 }
 .carousel-h{
     position: relative;
@@ -109,9 +145,9 @@ main{
 .plan-card{
     margin-left: 4vw;
     padding-top: 10px;
-    min-width: 350px;
+    min-width: 250px;
 }
-button.btn{
+button.btn, .wpcf7-submit{
     width: 200px;
     margin-left: 50px;
     margin-bottom: 50px;
@@ -121,6 +157,7 @@ button.btn{
     border-width: 1px 0px 0px 1px;
     border-style: solid;
     border-color: #000000;
+    color: #fff;
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 button.btn:hover{
@@ -143,5 +180,136 @@ footer{
     font-family: 'Share Tech Mono', monospace;
     color: #D5CFC7;
     font-weight: 500;
+}
+/* Blog */
+.middle-area{
+    padding-right: 20px;
+    padding-top: 30px;
+}
+.sidebar-blog{
+    background: linear-gradient(135deg, #fbfafaf9, #D5CFC7);
+    border-radius: 20px;
 
+}
+.widget-wrapper{
+    padding-left: 20px;
+}
+
+#search-sidebar{
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none !important; 
+}
+.wp-block-heading{
+    font-family: 'Share Tech Mono', monospace;
+}
+.featured-h2 a, h2 a{
+    color: #000000;
+}
+.featured-h2, h2{
+    margin:0;
+    font-family: 'Share Tech Mono', monospace;
+    padding:0;        
+    margin-bottom: 2vh;
+}
+.post-h2{
+    width: fit-content;
+    padding:5px;
+    padding-right: 20px; 
+    background-color: #ff88007d;   
+    border-radius: 10px;     
+    margin-top:5vh;
+}
+.featured p{
+    margin-bottom: 10vh;
+}
+.blog-lb{
+    color:#0000007b;
+}
+.meta-info-p{
+    color:#251761;
+    text-transform: uppercase;
+    margin: 2px !important;
+}
+.vline{
+    background: radial-gradient(#25176145 5%,#ffffff00  ) ;
+    width:1px !important; 
+    padding:0 !important;
+}
+.hline{
+    height: 1px;
+    background:linear-gradient( to right, #ffffff0a , #25176132, #ffffff00 50%) ;
+    margin-bottom: 1vh;
+    width: 40%;
+    float: right;
+}
+
+/* Single */
+.container.single{
+    padding-top:5vh;
+}
+.content{
+    width: 90%;
+    padding-left: 10%;
+}
+/* Search-page */
+.search-results{
+    padding-right: 5vw;
+}
+#search-nav{
+    padding-top: 30px;
+    padding-left:30px;
+}
+/* Contact page */
+p input, p textarea{
+    background-color: #ffffff8a     ;
+    border-color: #ff8800;
+    border-top: 2px !important;
+    border-left: 2px !important;
+}
+p label{
+    color: #251761;
+}
+p textarea{
+    border:2px solid #ff8800;
+}
+p input.wpcf7-submit{
+    border: 1px solid #000 !important;
+    margin:0 !important;
+}
+p span.wpcf7-not-valid-tip{
+    color: #251761;
+    background-color: #fb080898;
+    font-weight: 700;
+}
+#contact-div{
+    padding-bottom: 5vh;
+}
+.wpcf7-response-output{
+    color:#251761;
+    background-color: #ffffff8a;
+}
+/* animation */
+.current-page{
+    background-color: #361d001c !important;   
+    border-radius: 10px;
+    padding:2px;
+}
+#backToTopBtn {
+    position: fixed;
+    bottom: 4vh;
+    right: 20px;
+    display: none;
+    border: 1px solid #2517619d;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.281); 
+    border-radius: 15px;
+    padding:0px 2px 0px 2px;
+    background-color: #00000000;
+    font-size: x-large;
+    z-index: 999;
 }

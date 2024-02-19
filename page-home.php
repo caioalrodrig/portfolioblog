@@ -61,15 +61,18 @@
             <div class="container">
                 <div class="row"> 
                     <div class="column col-md-5">
-                        <h1 class="title">Serviços de TI</h1>
+                        <h1 class="title" id="t1">Serviços de TI</h1>
                         <h6 style="font-size: 20px;">Aqui seu sistema web é desenvolvido de forma profissional, com tecnologias seguras e atuais. </h6>
                     </div>
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/amico.svg" class="img-fluid col-md-7" id="img1" style="max-height: 60vh; min-height: 40vh;"></img>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/amico.svg" class="img-fluid col-md-7 distorcer" id="img1" style="max-height: 60vh; min-height: 40vh;"></img>
                 </div>
-                <div class="text-center">
+                <div class="row">
+                <div class="col-6 text-center">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/Easel.png"></img>
                     <p class="service-h7">Dê vida à sua marca</p>
                     <p class="sub-title">Recriamos qualquer design, seu site é desenhado sob medida.</p>
+                </div>
+                <p class="col-6 triangle text-center"></p>
                 </div>
                 <div class="row">
                     <div class="col col-md-6 text-center">
@@ -104,6 +107,7 @@
             </div>     
 
         </section>
+        <button id="backToTopBtn">&nbsp&#11149;</button>
     </main>
 </div>
 <?php get_footer(); ?>

@@ -1,13 +1,21 @@
 <article <?php post_class()?> id="post <?php post_class();?>">
+    <h2 class="post-h2"><a href="<?php the_permalink();?>">
+        <?php the_title();?>
+        </a></h2>    
     <div class="row">
-        <h2> <?php the_title();?></h2>
-        <p class="col-3"> Published in <?php echo get_the_date(); ?></p> 
-        <?php if(has_category()):?>
-            <p class="col-3"> Categories: <?php the_category('');?></p>
-        <?php endif;?>
-        <p class="col-3"><?php the_tags('Tags: <span>','', '</span>'); ?></p>
+        <div class="row meta-info text-center">
+        <div class="column col-3" style="padding:0;">
+        <label class="blog-lb">Published in</label>
+        <p class="meta-info-p"> <?php echo get_the_date(); ?> </p>
+        </div>
+        <div class="col-1 vline"></div>
+        <div class="column col-2" style="padding:2px !important;">
+        <label class="blog-lb">Tags</label>
+        <p class="meta-info-p"><?php the_tags('<span>','', '</span>'); ?></p>
+        </div>        
+        </div>
     </div>
-    <div class="content">
+    <div >
         <?php the_excerpt(); ?>
     </div>
 </article>

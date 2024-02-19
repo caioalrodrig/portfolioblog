@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dev Caio Rodrigues</title>
+    <title>devCaioRodrigues</title>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -21,7 +21,6 @@
             </div>
             <div class="search col-xl-3 col-sm-5 col-6 text-right">
                 <?php get_search_form();?>
-            </input>
             </div>
             </div>
         </div>
@@ -29,7 +28,7 @@
         <section class="menu-area">
         <div class="container">
             <div class="row">
-            <section class="logo col-8">Caio Rodrigues</section>
+            <section id="logo" class="logo col-8">Caio Rodrigues</section>
             
             <nav class="navbar col-4 navbar-expand-md bg-body-tertiary" id="menu-bs">
             <div class="container-fluid">

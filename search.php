@@ -1,9 +1,9 @@
 <?php get_header();?>
-<div id="primary">
-    <div id="main">
-        <div class="container">
-        <h2 class="search-results-for">Mostrando resultados para: <?php echo get_search_query();?></h2>
-        <?php get_search_form(); ?>
+<section class="middle-area" id="primary">
+<main id="main">
+        <div class="row" id="search-nav">
+            <div class="col-8"><h2 class="search-results-for">Mostrando resultados para: <?php echo get_search_query();?></h2></div>
+            <div class="col-6"> <?php get_search_form(); ?></div>
         </div>
         <div class="container">
             <?php
@@ -11,10 +11,7 @@
                 get_template_part('template-parts/content','search');    
             endwhile;
             ?>
-            <!-- <div class="row">
-                <div class="pages text-start col-6"><?php previous_posts_link("<< Posts recentes");?></div>
-                <div class="pages text-end col-6"><?php next_posts_link("Posts antigos >>");?></div>
-            </div> -->
+
             <?php
             the_posts_pagination(array('prev-text'=>'Anterior',
             'next_text'=>'Próximo',
@@ -23,6 +20,8 @@
         );?>
             
         </div>
-    </div>
-</div>
+    </main>
+    </section>
 <?php  get_footer();?>
+
+

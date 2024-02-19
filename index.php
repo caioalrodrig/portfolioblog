@@ -2,7 +2,7 @@
 <div> 
     <main>
     <section class="row middle-area">
-        <div class="news col-sm-10">
+        <div class="news col-sm-9">
         <div class="container">
             <div class="row">
                 <!-- <h1>Últimas notícias</h1> -->
@@ -11,7 +11,7 @@
                     if($featured->have_posts()):
                         while($featured->have_posts()): $featured->the_post();
                 ?>
-                <div class="col-12">
+                <div class="col-12 text-center">
                     <?php
                      get_template_part('template-parts/content','featured'); 
                     ?>
@@ -48,8 +48,8 @@
 
         
     </section>
-    <section class="map">Mapa</section>
 
+    <button id="backToTopBtn">&nbsp&#11149;</button>
     </main>
 </div>
 <?php get_footer();?>

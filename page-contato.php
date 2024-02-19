@@ -2,16 +2,15 @@
 <div> 
     <main>
     <section class="middle-area">
-        <div class="container">
+        <div class="container" id="contact-div">
             <div class="row">
-                <h2>Contato</h2>
+                <h1 class="title">Contato</h1>
                 <p>Entre em contato conosco através do email.</p>
-                <div class="contact col-12">
-                </div>
             </div>
+            <?php get_sidebar('home');?> <!-- formulario de contato widget -->
         </div>
     </section>
-    <section class="map">Mapa</section>
+    <button id="backToTopBtn">&nbsp&#11149;</button>
 
     </main>
 </div>
@@ -19,3 +18,4 @@
 
 </body>
 </html>
+
