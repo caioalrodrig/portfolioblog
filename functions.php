@@ -28,12 +28,13 @@ function wppage_config(){
 }
 add_action('after_setup_theme','wppage_config', 0);
 add_action('widgets_init','wppage_sidebars', 0);
+
 function wppage_sidebars(){
     register_sidebar(
         array(
-            'nome' => 'Home Page Sidebar',
+            'name' => 'Contact Page Sidebar',
             'id' => 'sidebar-1',
-            'description' => 'Sidebar to be used on Home Page',
+            'description' => 'Sidebar to be used for contact Form',
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
@@ -42,7 +43,7 @@ function wppage_sidebars(){
         );
         register_sidebar(
             array(
-                'nome' => 'Blog Sidebar',
+                'name' => 'Blog Sidebar',
                 'id' => 'sidebar-2',
                 'description' => 'Sidebar to be used on Blog Page',
                 'before_widget' => '<div class="widget-wrapper">',
@@ -53,7 +54,7 @@ function wppage_sidebars(){
             );
             register_sidebar(
                 array(
-                    'nome' => 'Service',
+                    'name' => 'Service',
                     'id' => 'service-1',
                     'description' => 'First service area',
                     'before_widget' => '<div class="widget-wrapper">',
@@ -64,3 +65,6 @@ function wppage_sidebars(){
             );
                 
 }
+
+require_once get_template_directory(). '/inc/customizer.php';
+

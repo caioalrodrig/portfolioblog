@@ -1,5 +1,9 @@
 const circleTriangles = [ '&#9650','&#9654','&#9660','&#9664'];
 document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelectorAll('.btn-reveal');
+    const card = document.querySelector('img.plan-card');
+    const cardP = document.querySelector('.reveal-p');
+
     const a = document.querySelector('section.logo');
     let content = a.innerText;
     a.innerHTML  = '';
@@ -18,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /**/
     const currentPage = window.location.href;
     
-    var menuLinks = document.querySelectorAll("nav ul li");
+    var menuLinks = document.querySelectorAll("nav ul li a");
     liArr = [];
 
     for( let i=0; i< menuLinks.length; i++){
@@ -50,9 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: "smooth" }); 
     });
 
-    }
-    
+    //
+
+}  
 );
+
+
+
 
 
 

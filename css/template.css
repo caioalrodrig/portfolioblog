@@ -27,8 +27,10 @@ body{
     transition: transform 2s;
 }
 .nav-icon{
+    width: 50px;
     margin-left: 5px;
-    color: #ff8800;   
+    height: auto;
+    padding: 0;    
 }
 #menu-bs{
     background-color: #00000000 !important ;
@@ -84,6 +86,10 @@ main{
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5); 
     transform: translateY(4px);
 }
+#search{
+    position: relative;
+    top:-6px;
+}
 h1.title, h1.archive-title{
     font-family: 'Share Tech Mono', monospace;
     color: #251761;
@@ -101,9 +107,9 @@ h1.title, h1.archive-title{
 .sub-title{
     font-size:18px;
 }
-.bi{
+.bi:not(#search){
     position: relative;
-    top: -7px;
+    top: -3vh;
 }
 #img1{
     max-width: 70vw;
@@ -127,7 +133,7 @@ h1.title, h1.archive-title{
 }
 .carousel-h{
     position: relative;
-    top: -15px;
+    top: -5vh;
 }
 .services{
     position: relative;
@@ -140,12 +146,16 @@ h1.title, h1.archive-title{
     font-size: 24px;
 }
 .text-center{
-    margin-top: 60px;
+    padding-top: 30px;
 }
 .plan-card{
-    margin-left: 4vw;
-    padding-top: 10px;
     min-width: 250px;
+    z-index: 2 !important;
+    position: relative;
+}
+.plan-card:hover{
+    opacity: 5%;
+    transition: 1.5s;
 }
 button.btn, .wpcf7-submit{
     width: 200px;
@@ -181,18 +191,40 @@ footer{
     color: #D5CFC7;
     font-weight: 500;
 }
-/* Blog */
-.middle-area{
-    padding-right: 20px;
-    padding-top: 30px;
+.btn-reveal{
+    min-width: 250px;
+    position: relative;
+    background-color: #00000000;
+    border: none;
+    margin-left: 4vw;
+    padding-top: 10px;
 }
+
+p.reveal-p{
+    position: absolute;
+    top:28%;
+    left: 20%;
+    z-index: 1 !important;
+    background-color: #c9c9c9;
+    font-weight: 700;
+    font-size: medium;
+    transition: 1.5s;
+    border-radius: 20px;
+    padding: 3px;
+}
+
+/* Blog */
+.middle-area:not(#primary){
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
 .sidebar-blog{
     background: linear-gradient(135deg, #fbfafaf9, #D5CFC7);
     border-radius: 20px;
-
 }
 .widget-wrapper{
-    padding-left: 20px;
+    padding-left: 20px;    
 }
 
 #search-sidebar{
@@ -257,6 +289,13 @@ a{
     width: 90%;
     padding-left: 10%;
 }
+p a{
+    color:#251761;
+}
+p a:hover{
+    color:#00d9ff;
+    transition-duration: 2s;
+}
 /* Search-page */
 .search-results{
     padding-right: 5vw;
@@ -294,12 +333,36 @@ p span.wpcf7-not-valid-tip{
     color:#251761;
     background-color: #ffffff8a;
 }
+/* comments*/
+.comments-title{
+    color: #251761;
+}
+
+div.comment-meta.commentmetadata a:not(.comment-edit-link){
+    color:#0000007b;
+
+}
+.comment-edit-link,.comment-reply-link{
+    color:#251761;
+    text-decoration: underline !important;
+}
+.comment-author span{
+    color: #251761;
+}
+ol::marker{
+    color:#ff8800 !important;
+}
+h2.comment-reply-title#reply-title{
+    background-color: #ff88007d;
+    max-width: fit-content;
+}
+
 /* animation */
 .current-page{
-    background-color: #361d001c !important;   
-    border-radius: 10px;
     padding:2px;
+    text-decoration: underline;
 }
+
 #backToTopBtn {
     position: fixed;
     bottom: 4vh;
@@ -309,7 +372,7 @@ p span.wpcf7-not-valid-tip{
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.281); 
     border-radius: 15px;
     padding:0px 2px 0px 2px;
-    background-color: #00000000;
+    background-color: #ff8800;
     font-size: x-large;
     z-index: 999;
 }
