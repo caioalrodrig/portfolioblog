@@ -23,11 +23,11 @@ body{
     display: inline-block;
 }
 .search-submit:hover {
-    transform: translateY(-15px); 
-    transition: transform 2s;
+    transform: translateY(-10px); 
+    transition: transform 1.5s;
 }
 .nav-icon{
-    width: 50px;
+    width: 5vmin;
     margin-left: 5px;
     height: auto;
     padding: 0;    
@@ -41,7 +41,6 @@ input:not(p input ){
     border: 1px solid #000000; 
     width: 100px;
     padding-bottom:0;
-    padding-top: 4px;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 
@@ -65,12 +64,32 @@ input:not(p input ){
     margin-top: 10px;
 
 }
+button.navbar-toggler{
+   
+    border-radius: 10px;
+    padding:0px 2px 0px 2px;
+    color:#251761;
+    margin-left: 5vw;
+    font-size: large;
+    font-weight: 400;
+    border: 1px solid currentColor;
+    box-shadow: inset 0 0 0.2em 0 currentColor, 0 0 0.2em currentColor;
+    background-color: #00000000;
+}
 .logo{
+    width: 32px;
+    height: auto;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+span.logo-p{
     font-family: 'Share Tech Mono';
     font-size:38px;
     color: #251761;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
     font-weight: 500;
+    width: fit-content;
 }
 main{
     background: radial-gradient(circle at center, #bdbdbdb6 40%, #D5CFC7 ),
@@ -81,10 +100,8 @@ main{
     padding-top: 8px;
     height: 28px;
     width: 25px;
-    background-color: #ffffff41 ;
-    border: 1px solid #000000; /* Uma borda sólida preta de 2 pixels */
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5); 
-    transform: translateY(4px);
+    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.261); 
+    transform: translateY(6px);
 }
 #search{
     position: relative;
@@ -111,8 +128,23 @@ h1.title, h1.archive-title{
     position: relative;
     top: -3vh;
 }
+.btn-hero{
+    width: fit-content;
+    margin-top: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: x-large;
+    border-width: 1px 0px 0px 1px;
+    border-style: solid;
+    border-color: #000000;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    border-bottom-right-radius: 10px;
+
+}
 #img1{
-    max-width: 70vw;
+    max-width: 20vw;
+    min-width: 250px;
     padding-top: 20px;
     padding-bottom: 10vh;
 }
@@ -157,28 +189,52 @@ h1.title, h1.archive-title{
     opacity: 5%;
     transition: 1.5s;
 }
+/* button.btn, .wpcf7-submit{
+    position: relative;
+} */
 button.btn, .wpcf7-submit{
-    width: 200px;
-    margin-left: 50px;
-    margin-bottom: 50px;
-    background-color: #ff8800;
+    width: fit-content;
+    margin-left: 10vw;
+    margin-bottom: 10vh;
     font-size: x-large;
-    font-weight: 500;
+    font-weight:400;
     border-width: 1px 0px 0px 1px;
     border-style: solid;
     border-color: #000000;
     color: #fff;
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    border-radius: 0px;
+    border-bottom-right-radius: 10px;
+    padding:2px;
+
 }
-button.btn:hover{
-    background:  #b6490057;
+.btn-span{
+    white-space: nowrap;
+}
+
+/* button.btn::before{
+    content: "";
+    position: absolute;
+    background-color: #ff8400;
+    top:100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(2em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1.5em);
+    opacity: 0.7;
+} */
+
+button.btn:hover, .btn-hero:hover{
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.5); 
+    transition: 0.2s;
 }
 button.btn:active{
-    background:  #b6490057;
+    background:  #b6490057 !important;
 }
 .copy{
     font-size: larger;
-    color: #bdbdbdb6;
+    color: #D5CFC7;
     margin-left:20px
 
 }
@@ -200,10 +256,11 @@ footer{
     padding-top: 10px;
 }
 
-p.reveal-p{
+div.reveal-p{
     position: absolute;
     top:28%;
-    left: 20%;
+    left: 10%;
+    color: #451c00 ;
     z-index: 1 !important;
     background-color: #c9c9c9;
     font-weight: 700;
@@ -253,7 +310,6 @@ a{
     width: fit-content;
     padding:5px;
     padding-right: 20px; 
-    background-color: #ff88007d;   
     border-radius: 10px;     
     margin-top:5vh;
 }
@@ -368,11 +424,12 @@ h2.comment-reply-title#reply-title{
     bottom: 4vh;
     right: 20px;
     display: none;
-    border: 1px solid #2517619d;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.281); 
     border-radius: 15px;
     padding:0px 2px 0px 2px;
-    background-color: #ff8800;
     font-size: x-large;
+    font-weight: 600;
     z-index: 999;
+    border: 2px solid currentColor;
+    box-shadow: inset 0 0 0.2em 0 currentColor, 0 0 0.2em currentColor;
+    background-color: #00000000;
 }

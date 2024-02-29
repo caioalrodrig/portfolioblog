@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.querySelector('img.plan-card');
     const cardP = document.querySelector('.reveal-p');
 
-    const a = document.querySelector('section.logo');
+    const a = document.querySelector('span.logo-p');
     let content = a.innerText;
     a.innerHTML  = '';
     /**/   

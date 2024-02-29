@@ -1,5 +1,5 @@
-<article <?php post_class()?> >
-    <h2 class="post-h2"><a href="<?php the_permalink();?>">
+<article <?php esc_attr(post_class());?> >
+    <h2 class="post-h2" style="background-color: <?php echo esc_attr(get_theme_mod('set_second_color','#ff88007d')) ;?>"><a href="<?php the_permalink();?>">
     <?php the_title();?>
     </a></h2>
     <div class="thumbnail">
@@ -9,8 +9,8 @@
     </div>
     <div class="column meta-info">
         <div class="column" style="padding:0;">
-        <label class="blog-lb">Published in</label>
-        <p class="meta-info-p"> <?php echo get_the_date(); ?> </p>
+        <label class="blog-lb"><?php _e('Published in','portfolioblog');?></label>
+        <p class="meta-info-p"> <?php echo esc_html(get_the_date()); ?> </p>
         </div>
         <div class="column" style="padding:2px !important;">
         <?php

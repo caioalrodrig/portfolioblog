@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php esc_html(get_header());?>
 <div> 
     <main>
     <section class="row middle-area">
@@ -15,7 +15,7 @@
                 ?>
                 <div class="col-12">
                     <?php
-                     get_template_part('template-parts/content','archive'); 
+                    esc_html(get_template_part('template-parts/content','archive')); 
                     ?>
                 </div>
                 <?php                 
@@ -28,13 +28,12 @@
             </div>
         </div>
         </div>
-        <?php get_sidebar('blog');?>
+        <?php esc_html(get_sidebar('blog'));?>
     </section>
-    <section class="map">Mapa</section>
 
     </main>
 </div>
-<?php get_footer();?>
+<?php esc_html(get_footer());?>
 
 </body>
 </html>

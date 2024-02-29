@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>devCaioRodrigues</title>
+    <title>
+    <?php
+    $page_title = wp_title( '|', false, 'left' );
+    
+    if (empty($page_title)) {
+        $page_title = esc_html(get_bloginfo('name'));
+    } else {
+        $page_title =  esc_html(get_bloginfo('name')) .  $page_title ;
+    }
+    
+    echo $page_title;
+    ?>
+    </title>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <header>
         <section class="top-bar">
         <div class="container">
             <div class="row">
             <div class="social-media col-xl-9 col-sm-7 col-6">
-                <a href="<?php echo get_theme_mod('set_icon_url_1') ?>" target="_blank">
-                <img class="nav-icon" src="<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_icon_img_1'), 'full' ); ?>"> 
+                <a href="<?php echo esc_url(get_theme_mod('set_icon_url_1')); ?>" target="_blank">
+                <img class="nav-icon" src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_img_1')), 'full' )); ?>"> 
                 </a>
-                <a href="<?php echo get_theme_mod('set_icon_url_2') ?>" target="_blank">
-                <img class="nav-icon" src="<?php echo wp_get_attachment_image_url( get_theme_mod( 'set_icon_img_2'), 'full' ); ?>"> 
+                <a href="<?php echo esc_url(get_theme_mod('set_icon_url_2')); ?>" target="_blank">
+                <img class="nav-icon" src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_img_2')), 'full' )); ?>"> 
                 </a>
             </div>
             <div class="search col-xl-3 col-sm-5 col-6 text-right">
-                <?php get_search_form();?>
+                <?php esc_html(get_search_form()); 
+                ?>  
             </div>
             </div>
         </div>
@@ -28,8 +42,10 @@
         <section class="menu-area">
         <div class="container">
             <div class="row">
-            <section id="logo" class="logo col-8" style="color: <?php echo get_theme_mod('set_first_color') ;?>">Caio Rodrigues</section>
-            
+            <section  class="col-8 ">
+            <span class="logo-p" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>"><?php echo esc_html(get_theme_mod('set_h1','Tech Blog'));?></span>
+            <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_logo')), 'full' )); ?> " class="logo"/>
+            </section>
             <nav class="navbar col-4 navbar-expand-md bg-body-tertiary" id="menu-bs">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,14 +54,12 @@
                 <div class="collapse navbar-collapse" id="navbarToggler">
                 <nav class="menu text-right"> 
                     <div class="row ">
-                    <?php wp_nav_menu(array('theme_location' => 'my_main_menu')) ?>
+                    <?php wp_nav_menu(array('theme_location' => esc_html('my_main_menu'))); ?>
                     </div>
                 </nav> 
                 </div>
             </div>
-            </nav>
-
-            
+            </nav>            
         </div>
         </div>
         </section>

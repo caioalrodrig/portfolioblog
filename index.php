@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php esc_html(get_header());?>
 <div> 
     <main>
     <section class="row middle-area">
@@ -9,11 +9,11 @@
                 <?php   
                   $featured = new WP_Query('post_type=post&posts_per_page=1');            
                     if($featured->have_posts()):
-                        while($featured->have_posts()): $featured->the_post();
+                        while(esc_html($featured->have_posts())): esc_html($featured->the_post());
                 ?>
                 <div class="col-12 text-center">
                     <?php
-                     get_template_part('template-parts/content','featured'); 
+                     esc_html(get_template_part('template-parts/content','featured')); 
                     ?>
                 </div>
                 <?php                 
@@ -21,19 +21,19 @@
                         wp_reset_postdata();
                     endif;
                 ?>
-                <!-- <h1>Noticias gerais</h1> -->
+                <!-- Noticias gerais -->
                 <?php   
                     $args = array(
-                        'posts-per-page'=>'4',
-                        'offset' =>'1'
+                        'posts-per-page'=>esc_html('4'),
+                        'offset' =>esc_html('1')
                     );
                     $secondary = new WP_Query($args);            
                     if($secondary->have_posts()):
-                        while($secondary->have_posts()): $secondary->the_post();
+                        while(esc_html($secondary->have_posts())): esc_html($secondary->the_post());
                 ?>
                     <div class="col-sm-6">
                         <?php
-                        get_template_part('template-parts/content', get_post_type()); 
+                        esc_html(get_template_part('template-parts/content', get_post_type())); 
                         ?>
                     </div>
                 <?php                 
@@ -44,7 +44,7 @@
             </div>
         </div>
         </div>
-        <?php get_sidebar('blog');?>
+        <?php esc_html(get_sidebar('blog'));?>
 
         
     </section>
@@ -52,7 +52,7 @@
     <button id="backToTopBtn">&nbsp&#11149;</button>
     </main>
 </div>
-<?php get_footer();?>
+<?php esc_html(get_footer());?>
 
 </body>
 </html>

@@ -19,11 +19,13 @@ function wppage_config(){
         'height' => 225,
         'width' => 1920
     );
-    add_theme_support('custom-header', $args);
     add_theme_support('post-thumbnails');
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'automatic-feed-links' );
     add_theme_support('post-formats', array(
         'video', 'image'
     ));
+    load_theme_textdomain('portfolioblog',get_template_directory() . '/languages/');
 
 }
 add_action('after_setup_theme','wppage_config', 0);
@@ -54,13 +56,29 @@ function wppage_sidebars(){
             );
             register_sidebar(
                 array(
-                    'name' => 'Service',
-                    'id' => 'service-1',
-                    'description' => 'First service area',
-                    'before_widget' => '<div class="widget-wrapper">',
-                    'after_widget' => '</div>',
-                    'before_title' => '<h2 class="widget-title">',
-                    'after_title' => '</h2>' 
+                    'name' => 'Service-card 1',
+                    'id' => 'card1',
+                    'description' => 'Animated card 1 area',
+                    'before_widget' => '<div class="reveal-p text-start">',
+                    'after_widget' => '</div>'
+                )
+            );
+            register_sidebar(
+                array(
+                    'name' => 'Service-card 2',
+                    'id' => 'card2',
+                    'description' => 'Animated card 2 text area',
+                    'before_widget' => '<div class="reveal-p text-start">',
+                    'after_widget' => '</div>'
+                )
+            );
+            register_sidebar(
+                array(
+                    'name' => 'Service-card 3',
+                    'id' => 'card3',
+                    'description' => 'Animated card 3 text area',
+                    'before_widget' => '<div class="reveal-p text-start">',
+                    'after_widget' => '</div>'
                 )
             );
                 
