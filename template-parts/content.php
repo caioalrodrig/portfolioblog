@@ -25,5 +25,17 @@
         <div class="hline text-right"></div>                
     </div> 
     
-    <?php the_excerpt(); ?>
+    <?php if(has_excerpt()):?>
+            <div class="content">
+            <?php the_excerpt(); ?>
+            </div>
+        <?php elseif(strpos($post->post_content,'<!--More--!>')):?>
+            <div class="content">
+            <?php the_content(__('More','portfolioblog'));?>
+            </div>
+        <?php else:?>
+            <div class="content">
+            <?php the_excerpt('');?>
+            </div>
+            <?php endif;?>
 </article>

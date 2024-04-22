@@ -1,120 +1,122 @@
 <?php esc_html(get_header());?>
+<body>
 <div class="content-area">
     <main>
-        <section class="services"> 
+        <section class="hero" style="background-image: url(<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/hero-bg.png); "> 
             <div class="container">
                 <div class="row"> 
-                    <div class="column col-md-5">
+                    <div class="column col-md-6" id="hero-text">
                         <h1 class="title" id="t1" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>"> <?php echo esc_html(get_theme_mod('set_subtitle'));?></h1>
                         <h6 style="font-size: medium;"><?php echo esc_html(get_theme_mod('set_subsubtitle'));?> </h6>
-                        <button class="btn-hero btn-primary" style="background-color: <?php echo esc_attr(get_theme_mod('set_second_color','#ff8800')) ;?>;" >
+                        <button class="btn-hero btn" >
                         <a><span>&nbsp;&nbsp;<?php echo esc_html(get_theme_mod('set_action_btn','GET INFO'));?>&#128640;</span></a>
                         </button>
 
                     </div>
-                    <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_animated_img')), 'full' )); ?>" class="img-fluid col-md-7 distorcer" id="img1" />
+                    <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_animated_img')), 'full' )); ?>" class="img-fluid col-md-6 distorcer" id="img1" />
                 </div>
-
-                <div class="row">
-                <div class="col-6 text-center">
-                    <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_1')), 'full' )); ?>"/>
+            </div>
+        </section> 
+        <section class="services"> 
+            <div class="container column">
+                <div class="row " style="margin-bottom: 2vh;">
+                <div class="col-md-6 col-12 text-center" >
+                    <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_1')), 'full' )); ?>" class="service-icon"/>
                     <p class="service-h7" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>"><?php echo esc_html(get_theme_mod('set_sec2_subtitle1'));?></p>
-                    <p class="sub-title"><?php echo esc_html(get_theme_mod('set_sec2_description1'));?></p>
+                    <p class="sub-title "><?php echo esc_html(get_theme_mod('set_sec2_description1'));?></p>
                 </div>
-                <p class="col-6 triangle text-center"></p>
+                <div class=" vline" ></div>
+                <div class="col-md-5 col-12 text-center">
+                    <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_2')), 'full' )); ?>" class="service-icon"/>
+                    <p class="service-h7" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>"><?php echo esc_html(get_theme_mod('set_sec2_subtitle2'));?></p>
+                    <p class="sub-title "><?php echo esc_html(get_theme_mod('set_sec2_description2'));?></p>
                 </div>
-                <div class="row">
-                    <div class="col col-md-6 text-center">
-                        <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_2')), 'full' )); ?>"/>
-                        <p class="service-h7" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>"><?php echo esc_html(get_theme_mod('set_sec2_subtitle2'));?></p>
-                        <p class="sub-title"><?php echo esc_html(get_theme_mod('set_sec2_description2'));?></p>
+                </div>
+                <div class="row " style="margin-bottom: 2vh;">
+                    <div class="col col-md-6 col-12 text-center">
+                        <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_3')), 'full' )); ?>" class="service-icon"/>
+                        <p class="service-h7" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>"><?php echo esc_html(get_theme_mod('set_sec2_subtitle3'));?></p>
+                        <p class="sub-title"><?php echo esc_html(get_theme_mod('set_sec2_description3'));?> </p>
                     </div>
-                    <div class="col col-md-6 text-center">
-                        <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_3')), 'full' )); ?>"/>
-                        <p class="service-h7 " style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>"><?php echo esc_html(get_theme_mod('set_sec2_subtitle3'));?></p>
-                        <p class="sub-title"><?php echo esc_html(get_theme_mod('set_sec2_description3'));?></p>
+                    <div class=" vline" ></div>
+                    <div class="col col-md-5 col-12 text-center ">
+                        <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_4')), 'full' )); ?>" class="service-icon"/>
+                        <p class="service-h7 " style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>"><?php echo esc_html(get_theme_mod('set_sec2_subtitle4'));?></p>
+                        <p class="sub-title"><?php echo esc_html(get_theme_mod('set_sec2_description4'));?></p>
                      </div>
                 </div>
 
             </div>
         </section>
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <section class="portfolio">
+        <ul class="nav nav-underline justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                    Desktop
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Mobile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Web</button>
+            </li>
+        </ul>
+        <div class="tab-content text-center" id="myTabContent" >
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <ul>
+                Aplicativo Industrial
+                <li> Persistência de dados SQLite</li>
+                <li>Comunicação local TPC/IP</li>
+                <li>Monitoramento em tempo real</li>
+                </ul>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_img_1')), 'full' )); ?>" class="d-block w-100" style="height:300px" alt="https://placekitten.com/800/600">
-                <div class="carousel-caption">
-                <div class="column">
-                    <h3 class="carousel-h">
-                        <?php echo esc_html(get_theme_mod('carousel_title_1','Hello title 1'),'portfolioblog');?>
-                    </h3>
-                    <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                    </svg> 
-
-                </div>
-                </div>
-                </div>
-                <div class="carousel-item">
-                <img src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_img_2')), 'full' )); ?>" class="d-block w-100" style="height:300px" alt="https://placekitten.com/800/600">
-                <div class="carousel-caption ">
-                    <div class="column">
-                    <h3 class="carousel-h">
-                        <?php echo esc_html(get_theme_mod('carousel_title_1','Hello title 2'),'portfolioblog');?>
-                    </h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                    </svg>
-                    </div>
-                </div>
-                </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            Webpage para agência de designers, com o copyright do cliente aplicado ao estilo
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">Friend</div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"> <?php _e('Previous','portfolioblog');?></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden"><?php _e('Next','portfolioblog');?></span>
-        </button>
-        </div>
+        </section>
         <section class="middle-area">
+            <div class="steps-wrapper container column">
+                <div class="step-odd"><p> Você fala o que quer e o que não quer. Quanto mais detalhes, melhor. Será um prazer escutar sobre a história da sua marca.</p></div>
+                <div class="step"><p>Esta estapa não é cobrada. Compartilho com o cliente um protótipo inicial com todas as telas do software. </p></div>
+                <div class="step-odd"><p>Durante o desenvolvimento, as funcionalidades são icorporadas automaticamente ao servidor de hospedagem.</p></div>
+                <div class="step"><p>Após concluído e entregue, o cliente pode validar e se adaptar ao sistema. Alterações podem ser feitas neste período, sem custos adicionais.</p></div>
+            </div>
            <div class="container col-md-12 text-center">
                 <h1 class="title" id="t2" style="font-size:76px; color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>;"><?php echo esc_html(get_theme_mod('set_home_middlearea_h1'),'portfolioblog');?> </h1>
             </div>
             <div class="container">
                 <div class="row mx-auto">
-                <button class="col-3 btn-reveal" >
+                <button class="col-3 btn-reveal" style="background-image: url(<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/bg-page.png);">
                 <img class="plan-card img-fluid" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/page.svg">
                 <?php esc_html(get_sidebar('card1'));?>
+                <img class= "plan-card-plus"src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/Plus.png">
                 </button>
-                <button class="col-3 btn-reveal" >
+                <button class="col-3 btn-reveal"  style="background-image: url(<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/bg-blog.png);" >
                 <img class="plan-card img-fluid" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/blog.svg">
                 <?php esc_html(get_sidebar('card2'));?>
+                <img class= "plan-card-plus"src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/Plus.png">    
                 </button>
-                <button class="col-3 btn-reveal" >
+                <button class="col-3 btn-reveal"  style="background-image: url(<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/bg-loja.png);">
                 <img class="plan-card img-fluid" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/loja.svg">
                 <?php esc_html(get_sidebar('card3'));?>
+                <img class= "plan-card-plus"src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/Plus.png">
                 </button>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="col-6 ">
-                <button class="btn btn-primary" style="background-color: <?php echo esc_attr(get_theme_mod('set_second_color','#ff8800'));?> !important;" >
+            <div class="text-center get-info" >
+                <button class="btn btn-primary" >
                 <a><span class="btn-span">&nbsp;&nbsp;<?php echo esc_html(get_theme_mod('set_action_btn','GET INFO'));?>&#128640; </span></a>
                 </button>
-                </div>
-            </div>     
-
+            </div>   
         </section>
-        <button id="backToTopBtn" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>">&nbsp;&#11149;</button>
+        <button id="backToTopBtn" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>">&nbsp;&#11105;</button>
     </main>
 </div>
-<?php esc_html(get_footer());?>
+
+<section>
+    <?php esc_html(get_footer());?>
+</section>

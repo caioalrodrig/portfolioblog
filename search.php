@@ -1,44 +1,57 @@
 <?php esc_html(get_header());?>
-<section class="middle-area" id="primary">
-<main id="main">
-        <div class="text-center" id="search-nav">
-            <h2 class="search-results-for"> <?php echo _e('Showing results for: ', 'portfolioblog') . esc_html(get_search_query());?></h2>
+<main class="main-blog">
+<section class=" blog-area middle-area" >
+        <div class="text-left" id="search-nav">
+            <h1 class="search-results-for title"> <?php echo _e('Mostrando resultados para: ', 'portfolioblog') . "'" . esc_html(get_search_query()) . "'";?> </h2>
         </div>
-        <div class="container">
-            <?php
-            if(have_posts()):
-                while(have_posts()): the_post();
-                    esc_html(get_template_part('template-parts/content','search'));    
-                endwhile; 
-            ?>
-        </div>
-            <?php
-                else:
-            ?>
-            <div class="row no-results">
-                <div class="col-3"><?php _e('No results found. Please, try again: ','portfolioblog')?></div>
-                <div class="col-9">
+        <div class="row" style="margin-bottom: 10vh;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-6">
                 <?php
-                esc_html(get_search_form());
-                ?> 
-                </div>
+                if(have_posts()):
+                    while(have_posts()): the_post();
+                        esc_html(get_template_part('template-parts/content','search'));    
+                    endwhile; 
+                ?>
             </div>
-            <div class="suggestions">
+            <section class="sidebar-area col-sm-2 h-100 ">
+            <?php esc_html(get_sidebar('blog'));?>
+            <div class="search" id="search-sidebar">
+            <?php esc_html(get_search_form());?>
+            </div>
+            </section>
+            <?php else:
+            ?>
+            <div class="container no-results">
+                <div><?php _e('No results found. Please, give it another try: ','portfolioblog')?></div>
+                <div><?php esc_html(get_search_form()); ?></div>
+                <div class="suggestions">
                 <?php the_widget('WP_Widget_Recent_Posts', array('title' => esc_html__('Latest Posts','portfolioblog'),'number'=> esc_html('3')));?>
-            </div>  
-
-            <?php
-            endif;
-
-            the_posts_pagination(array('prev-text'=>esc_html__('Previous','portfolioblog'),
-            'next_text'=>esc_html__('Next','portfolioblog'),
-            'screen_reader_text' => ''
-            )
-        );?>
+                </div>  
+            </div>
+            </div>
+            <section class="sidebar-area col-sm-2 h-100 ">
+            <?php esc_html(get_sidebar('blog'));?>
+            <div class="search" id="search-sidebar">
+            <?php esc_html(get_search_form());?>
+            </div>
+            </section>
             
-        </div>
+            <?php endif;
+            ?>
+            </div>
+    </section>            
+    <div class="container text-center">
+            <?php
+                the_posts_pagination(array('prev_text'=>esc_html__('&lt;&lt; Prev','portfolioblog'),
+                'next_text'=>esc_html__('Next>>','portfolioblog'),
+                'screen_reader_text' => ''
+                )
+            );
+            ?>
+    </div>
     </main>
+    <section>
+        <?php esc_html(get_footer());?>
     </section>
-<?php esc_html(get_footer());?>
-
 

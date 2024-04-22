@@ -29,8 +29,7 @@ function wp_theme_customizer($wp_customize){
         LOGO
     */
     $wp_customize->add_setting('set_logo',array(
-        'type'=>'theme_mod',
-        'sanitize_callback'=>'sanitize_url_raw'
+        'type'=>'theme_mod'
 
     )
     );
@@ -139,12 +138,10 @@ function wp_theme_customizer($wp_customize){
     */ 
     $wp_customize->add_setting('set_icon_img_1',array(
             'type'=>'theme_mod',
-            'sanitize_callback'=>'sanitize_url_raw'
         )
     );
     $wp_customize->add_setting('set_icon_img_2',array(
-        'type'=>'theme_mod',
-        'sanitize_callback'=>'sanitize_url_raw'
+        'type'=>'theme_mod'
     )
     );
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize,
@@ -211,13 +208,11 @@ function wp_theme_customizer($wp_customize){
         SLIDER IMAGES
     */
     $wp_customize->add_setting('set_img_1',array(
-        'type'=>'theme_mod',
-        'sanitize_callback'=>'sanitize_url_raw'
+        'type'=>'theme_mod'
     )
     );
     $wp_customize->add_setting('set_img_2',array(
-        'type'=>'theme_mod',
-        'sanitize_callback'=>'sanitize_url_raw'
+        'type'=>'theme_mod'
     )
     );
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize,
@@ -286,8 +281,7 @@ function wp_theme_customizer($wp_customize){
         ANIMATED IMG
     */
     $wp_customize->add_setting('set_animated_img',array(
-        'type'=>'theme_mod',
-        'sanitize_callback'=>'sanitize_url_raw'
+        'type'=>'theme_mod'
     )
     );
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize,
@@ -312,18 +306,19 @@ function wp_theme_customizer($wp_customize){
         IMAGE-ICONS
     */
     $wp_customize->add_setting('set_icon_1',array(
-        'type'=>'theme_mod',
-        'sanitize_callback'=>'sanitize_url_raw'
+        'type'=>'theme_mod'
     )
     );
     $wp_customize->add_setting('set_icon_2',array(
-        'type'=>'theme_mod',
-        'sanitize_callback'=>'sanitize_url_raw'
+        'type'=>'theme_mod'
     )
     );
     $wp_customize->add_setting('set_icon_3',array(
-        'type'=>'theme_mod',
-        'sanitize_callback'=>'sanitize_url_raw'
+        'type'=>'theme_mod'
+    )
+    );
+    $wp_customize->add_setting('set_icon_4',array(
+        'type'=>'theme_mod'
     )
     );
     
@@ -354,6 +349,15 @@ function wp_theme_customizer($wp_customize){
     )
     )
     );  
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize,
+    'set_icon_4',array(
+        'label'=> 'Homepage second section icon 4',
+        'description'=> 'Upload image file (recommended width 90px)',
+        'section'=> 'sec_homepage2',
+        'mime_type'=> 'image'
+    )
+    )
+    ); 
     
     /*
         SUBTITLE H7
@@ -379,6 +383,13 @@ function wp_theme_customizer($wp_customize){
             'sanitize_callback' => 'sanitize_text_field'
         )
     );
+    $wp_customize->add_setting(
+        'set_sec2_subtitle4', array(
+            'type' => 'theme_mod',
+            'default' => 'Header (h7) 4',
+            'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
     $wp_customize->add_control(
         'set_sec2_subtitle1', array(
             'label' => 'Homepage second section subtitle 1',
@@ -396,6 +407,13 @@ function wp_theme_customizer($wp_customize){
     $wp_customize->add_control(
         'set_sec2_subtitle3', array(
             'label' => 'Homepage second section subtitle 3',
+            'section' => 'sec_homepage2',
+            'type' => 'text'
+        )
+    );
+    $wp_customize->add_control(
+        'set_sec2_subtitle4', array(
+            'label' => 'Homepage second section subtitle 4',
             'section' => 'sec_homepage2',
             'type' => 'text'
         )
@@ -424,6 +442,13 @@ function wp_theme_customizer($wp_customize){
             'sanitize_callback' => 'sanitize_text_field'
         )
     );
+    $wp_customize->add_setting(
+        'set_sec2_description4', array(
+            'type' => 'theme_mod',
+            'default' => 'Header (h7) description 4',
+            'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
     $wp_customize->add_control(
         'set_sec2_description1', array(
             'label' => 'Homepage second section subtitle description 1',
@@ -440,6 +465,13 @@ function wp_theme_customizer($wp_customize){
     );
     $wp_customize->add_control(
         'set_sec2_description3', array(
+            'label' => 'Homepage second section subtitle description 3',
+            'section' => 'sec_homepage2',
+            'type' => 'text'
+        )
+    );
+    $wp_customize->add_control(
+        'set_sec2_description4', array(
             'label' => 'Homepage second section subtitle description 3',
             'section' => 'sec_homepage2',
             'type' => 'text'
@@ -479,6 +511,70 @@ function wp_theme_customizer($wp_customize){
             'type' => 'text'
         )
     );
+    /*
+    FOOTER
+    */
+    $wp_customize->add_section(
+        'sec_footer', array(
+            'title' =>'Footer content'
+        )
+    );   
+    $wp_customize->add_setting(
+        'set_copyright', array(
+            'type' => 'theme_mod',
+            'default' => 'All rights reserved',
+            'sanitize_callback' => 'sanitize_text_field'
+        )
+    );
+    $wp_customize->add_control(
+        'set_copyright', array(
+            'label' => 'Set copyright text',
+            'section' => 'sec_footer',
+            'type' => 'text'
+        )
+    );
+    /*
+        SOCIAL-LIST BOTTOM
+    */
+    $wp_customize->add_setting(
+        'set_social_footer1', array(
+            'type' => 'theme_mod',
+        )
+    );
+    $wp_customize->add_setting(
+        'set_social_footer2', array(
+            'type' => 'theme_mod',
+        )
+    );
+    $wp_customize->add_setting(
+        'set_social_footer3', array(
+            'type' => 'theme_mod',
+        )
+    );
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize,
+    'set_social_footer1',array(
+        'label'=> 'Footer icon 1',
+        'section'=> 'sec_footer',
+        'mime_type'=> 'image'
+    )
+    )
+    ); 
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize,
+    'set_social_footer2',array(
+        'label'=> 'Footer icon 2',
+        'section'=> 'sec_footer',
+        'mime_type'=> 'image'
+    )
+    )
+    ); 
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize,
+    'set_social_footer3',array(
+        'label'=> 'Footer icon 3',
+        'section'=> 'sec_footer',
+        'mime_type'=> 'image'
+    )
+    )
+    ); 
     
     
 }

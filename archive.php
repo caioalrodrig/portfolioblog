@@ -1,7 +1,7 @@
 <?php esc_html(get_header());?>
 <div> 
-    <main>
-    <section class="row middle-area">
+    <main class="main-blog">
+    <section class="row blog-area">
         <div class="archive col-sm-10">
         <div class="container">
             <div class="row">
