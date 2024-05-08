@@ -7,7 +7,7 @@
     <h2 class="featured-h2"><a href="<?php the_permalink();?>">
     <?php the_title();?>
     </a></h2>    
-    <div class="row meta-info">
+    <div class="row featured-meta-info">
         <div class="column col-6" style="padding:0;">
         <label class="blog-lb"><?php _e('Published in','portfolioblog');?></label>
         <p class="meta-info-p"> <?php echo esc_html(get_the_date()); ?> </p>

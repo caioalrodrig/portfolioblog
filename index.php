@@ -1,11 +1,15 @@
 <?php esc_html(get_header());?>
 <div> 
-    <nav class="progressbar "></nav>
     <main class="main-blog">
     <section class="row blog-area middle-area">
+        <div class="col-sm-2"></div>
         <div class="col-sm-8 ">
         <section class="blog-posts">
-        <h1 class="title blog-upper">Últimas notícias</h1>
+            <div class="breadcrumb">
+                <span class="addr-crumb">
+                    <a>Blog</a>&nbsp;/
+                </span>
+            </div>     
             <div class="row">
                 <?php   
                   $featured = new WP_Query('post_type=post&posts_per_page=1');            
@@ -53,10 +57,9 @@
             </div>
         </section>
         </div>
-        <section class="sidebar-area col-sm-3 h-100 ">
-        <nav class="navbar blog-sidebar">
+        <nav class="navbar blog-sidebar" style="padding: 0;">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="margin-left: 50% !important;">
-                <span class="navbar-toggler-icon"></span>
+                <img src="<?php echo esc_attr(get_template_directory_uri()) . '/imgs/toggler-icon.png' ?>">
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -64,26 +67,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <?php esc_html(get_sidebar('blog'));?>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
                     <div class="search" id="search-sidebar">
                     <?php esc_html(get_search_form());?>
                     </div> 
                 </div>
             </div>
         </nav>
-            <!-- <?php esc_html(get_sidebar('blog'));?>
-            <div class="search" id="search-sidebar">
-            <?php esc_html(get_search_form());?>
-            </div> -->
-        </section>
-        
+        <div class="text-center" >
+            <img style="max-width: 90%; height:auto; opacity: 0.8;" src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/decoration-pattern.png'); ?>">
+        </div>
     </section>
 
     <button id="backToTopBtn" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>">

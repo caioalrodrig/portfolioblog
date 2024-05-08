@@ -5,31 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardP = document.querySelector('.reveal-p');
    
     const search = document.querySelector('.search-form');
-    const a = document.querySelector('h1.logo-p');
-    let page = 0;
+    const head = document.getElementById('t1');
+    const content = "Tecnologias que impulsionam"
+
+    const services = document.querySelector('.services');
     
+    const divs = document.querySelectorAll('.animate');
+    const numbs = document.querySelectorAll('.h-step');
 
-    // setTimeout( () => {
-    //     const svgStd = document.querySelector('.carousel svg filter feGaussianBlur');
-    //     const stddev = svgStd.getAttribute('stdDeviation');
-    //     svgStd.setAttribute('stdDeviation', '0 60');
-    //  }, 
-    //  2000);
-
-    // let content = a.innerText;
-    // a.innerHTML  = '';
-    // /**/   
-    // function typewriteName(index) {
-    //   a.innerHTML += content[index];
-    //   if (index < content.length - 1) {
-    //     setTimeout( () => {
-    //       typewriteName(index + 1);
-    //     }, 50); 
-    //   }
-    // }
-  
-    // typewriteName(0);
-
+    let page = 0;
     /**/
     function definePage(){
         var currentPage = window.location.href;
@@ -47,42 +31,98 @@ document.addEventListener('DOMContentLoaded', () => {
             default: 
                 page = 1;
         }
-        console.log(menuLinks[page], menuLinks[1])
-
 
         menuLinksFooter[page].classList.add("current-page");
         menuLinks[page].classList.add("current-page");
 
     }
     definePage();
+    function typewriteName(index) {
+        head.innerHTML += content[index];
+        if (index < content.length - 1) {
+          setTimeout( () => {
+            typewriteName(index + 1);
+          }, 50); 
+        }
+    }
 
-    /**/
-    var backToTopBtn = document.getElementById("backToTopBtn");
-    const triangle = document.querySelector("p.col-6.triangle");
+    head.innerHTML = '';
+    typewriteName(0);
 
-    window.addEventListener("scroll", function() {
-        if (page === 1){
+    var backToTopBtn = document.getElementById("backToTopBtn");    
+    let debounceTimeout;
+    let yTotal = document.documentElement.scrollHeight;
+    let onScroll = 0;
+
+    function debounce(func, delay) {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(func, delay);
+    }
+
+    function handleScroll() {
+        var y = window.scrollY;
+        if (onScroll === 0){
+            onScroll = 1;
+            if (y > 0.3 * yTotal) {
+                numbs[0].classList.add("show-animate")
+                if (y > 0.45 * yTotal){ 
+                    numbs[1].classList.add("show-animate");
+                    if (y > 0.5 * yTotal){ 
+                        numbs[2].classList.add("show-animate");
+                        if (y > 0.55 * yTotal) numbs[3].classList.add("show-animate");
+                    }
+                }
+            }
+            else{
+                numbs.forEach(n => {
+                    n.classList.remove("show-animate");
+                });
+            }
+            onScroll = 0;
+        }
+    }
+
+    function handleScroll1() {
+        if ( window.scrollY > 200){
+            divs[0].classList.add("show-animate");
+            divs[1].classList.add("show-animate");
+            setTimeout(() =>{
+                    divs[2].classList.add("show-animate");
+                    divs[3].classList.add("show-animate");
+            }, 1000);
+            backToTopBtn.style.display = "block";
+        } else backToTopBtn.style.display = "none";
+    }
+        
+
+    function handleScroll2() {
+        if (page === 1 && document.querySelector(".progressbar")){
+ 
             var alturaDoDocumento = document.documentElement.scrollHeight - window.innerHeight;
             var posicaoDeRolagem = window.scrollY ||  document.documentElement.scrollTop || document.body.scrollTop;
             var scrolledPercent = (posicaoDeRolagem / alturaDoDocumento) * 100;
             document.querySelector(".progressbar").style.width = scrolledPercent + "%";
-        }
-        if (window.scrollY > 200) {
-            backToTopBtn.style.display = "block";
- 
-        } else {
-            backToTopBtn.style.display = "none";
-        }
-    });
+        }       
+    }
 
-    
+    if (page === 0){
+
+        window.addEventListener('scroll', () => {
+            handleScroll1();
+            debounce(handleScroll, 0);
+        
+        });
+    }
+
+    if (page === 1){
+        window.addEventListener('scroll', handleScroll2);        
+    } 
+
     backToTopBtn.addEventListener("click", function() {
         window.scrollTo({ top: 0, behavior: "smooth" }); 
     });
 
-
-}  
-);
+});
 
 
 

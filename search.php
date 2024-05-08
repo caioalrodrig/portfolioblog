@@ -14,12 +14,6 @@
                     endwhile; 
                 ?>
             </div>
-            <section class="sidebar-area col-sm-2 h-100 ">
-            <?php esc_html(get_sidebar('blog'));?>
-            <div class="search" id="search-sidebar">
-            <?php esc_html(get_search_form());?>
-            </div>
-            </section>
             <?php else:
             ?>
             <div class="container no-results">
@@ -29,14 +23,7 @@
                 <?php the_widget('WP_Widget_Recent_Posts', array('title' => esc_html__('Latest Posts','portfolioblog'),'number'=> esc_html('3')));?>
                 </div>  
             </div>
-            </div>
-            <section class="sidebar-area col-sm-2 h-100 ">
-            <?php esc_html(get_sidebar('blog'));?>
-            <div class="search" id="search-sidebar">
-            <?php esc_html(get_search_form());?>
-            </div>
-            </section>
-            
+            </div>            
             <?php endif;
             ?>
             </div>
@@ -50,6 +37,26 @@
             );
             ?>
     </div>
+    <nav class="navbar blog-sidebar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="margin-left: 50% !important;">
+            <img src="<?php echo esc_attr(get_template_directory_uri()) . '/imgs/toggler-icon.png' ?>">
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Blog</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <?php esc_html(get_sidebar('blog'));?>
+                <div class="search" id="search-sidebar">
+                <?php esc_html(get_search_form());?>
+                </div> 
+            </div>
+        </div>
+    </nav>
+    </section>
+
+    <button id="backToTopBtn" style="color: <?php echo esc_attr(get_theme_mod('set_first_color')) ;?>">
     </main>
     <section>
         <?php esc_html(get_footer());?>

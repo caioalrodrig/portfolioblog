@@ -12,7 +12,7 @@
         <label class="blog-lb"><?php _e('Published in','portfolioblog');?></label>
         <p class="meta-info-p"> <?php echo esc_html(get_the_date()); ?> </p>
         </div>
-        <div class="column" style="padding:2px !important;">
+        <div class="column" style="padding-bottom:6px !important;">
         <?php
           if(has_tag()):
         ?>
@@ -22,7 +22,6 @@
           endif;
         ?>
         </div>    
-        <div class="hline text-right"></div>                
     </div> 
     
     <?php if(has_excerpt()):?>

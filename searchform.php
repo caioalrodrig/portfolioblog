@@ -2,7 +2,7 @@
     <label for="s" class="lb-search">
     <span class="screen-reader-text"><?php echo _x('Search for ','label','portfolioblog');?></span>
     </label>
-    <input type="search" class="search-field" placeholder="<?php echo esc_attr_x('&nbsp;&nbsp;Search','placeholder','portfolioblog');?>" value="<?php echo get_search_query(); ?>" name="s" /> 
+    <input type="search" class="search-field" placeholder="<?php echo esc_attr_x('&nbsp;Pesquisar','placeholder','portfolioblog');?>" value="<?php echo get_search_query(); ?>" name="s" /> 
     <?php 
         $image_url = get_template_directory_uri() . '/imgs/glass.png';
     ?>

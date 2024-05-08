@@ -35,15 +35,9 @@
 <?php
     }
 ?>
-<?php
-    if ( $page_title == ''){
-?>
-    <div class="footer-after" style="background-image: url(<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/bg-footer.png);"></div>
-<?php
-    }
-?>
+<div class="footer-after" style="background-image: url(<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/bg-footer.png);"></div>
 <div class="row footer-inner" >
-<div class="col-sm-2"></div>
+<div class="col-sm-3"></div>
     <div class="copyright col-sm-4 col-6">
         <p class="copy" style>
             <?php

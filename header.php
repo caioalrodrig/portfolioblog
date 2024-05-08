@@ -21,19 +21,20 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <?php 
-        $image_url = get_template_directory_uri() . '/imgs/hhhorizon.png';
+        $icon1 = get_template_directory_uri() . '/imgs/git_icon.svg';
+        $icon2 = get_template_directory_uri() . '/imgs/in_icon.svg';
     ?>
     <header >
         <div class="header-before"></div>
-        <section class="top-bar" style="background-image: url('<?php echo $image_url; ?>');">
+        <section class="top-bar">
         <div class="container">
             <div class="row row-media">
             <nav class="social-media col-xl-9 col-sm-7 col-5">
                 <a href="<?php echo esc_url(get_theme_mod('set_icon_url_1')); ?>" target="_blank">
-                <img class="nav-icon" src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_img_1')), 'full' )); ?>"> 
+                <img class="nav-icon" src="<?php echo esc_attr($icon1); ?>"> 
                 </a>
                 <a href="<?php echo esc_url(get_theme_mod('set_icon_url_2')); ?>" target="_blank">
-                <img class="nav-icon" src="<?php echo esc_url(wp_get_attachment_image_url( esc_html(get_theme_mod( 'set_icon_img_2')), 'full' )); ?>"> 
+                <img class="nav-icon" src="<?php echo esc_attr($icon2); ?>"> 
                 </a>
             </nav>
             <div class="search col-xl-3 col-sm-5 col-7 text-end">

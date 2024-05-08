@@ -1,7 +1,7 @@
 <article <?php post_class()?> id="post <?php post_class();?>">
     <div class="row text-center">
         <h2> <?php the_title();?></h2>
-        <div class="row meta-info">
+        <div class="row">
             <div class="column col-6" style="padding:0;">
             <label class="blog-lb">Published in</label>
             <p class="meta-info-p"> <?php echo get_the_date(); ?> </p>
