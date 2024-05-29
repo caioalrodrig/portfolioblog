@@ -10,7 +10,7 @@
                         <h1 class="title " id="t1"> <?php echo esc_html(get_theme_mod('set_subtitle'));?></h1> 
                         <h3 style="font-size: medium;"><?php echo esc_html(get_theme_mod('set_subsubtitle'));?> </h3>
                         <button class="btn-hero btn" >
-                        <a href="http://rocaio.pro/blog"><span>&nbsp;&nbsp;<?php echo esc_html(get_theme_mod('set_action_btn','Saber +'));?>&#128640;</span></a>
+                        <a href="https://rocaio.pro/blog"><span><?php echo esc_html(get_theme_mod('set_action_btn','Saber +'));?>&nbsp;</span></a>
                         <div class="btn-before" ></div>
                         </button>
                         
@@ -72,7 +72,7 @@
                         </button>
                     </nav>
                     </nav>
-                    <img src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/supervisory.png'); ?>">
+                    <img src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/supervisory.png'); ?>" style="width:150px;">
                     <!-- Modal -->
                     <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -81,8 +81,16 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
-                            <img src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/supervisory.gif'); ?>">
-                            <img src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/supervisory2.gif'); ?>" style="margin-top:15px; transform: scaleX(1.1);">
+                        <video controls>
+                            <source src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/supervisory.mp4'); ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                        <video controls style="margin-top:15px; margin-top:15px; transform: scaleX(1.1);">
+                            <source src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/supervisory2.mp4'); ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
                         </div>
                         </div>
                     </div>
@@ -104,7 +112,7 @@
                         <!-- </button> -->
                     </nav>
                     </nav>
-                    <img src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/mobile.png'); ?>" style="transform: scale(0.8);">
+                    <img src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/mobile.png'); ?>" style="width:150px;">
                     <!-- Modal -->
                     <div class="modal fade" id="staticBackdrop2" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -131,16 +139,16 @@
             <div class="steps-wrapper container column" style="background-image: url(<?php echo esc_url(get_stylesheet_directory_uri()); ?>/imgs/bg-steps.png);">
                 <hr id="hr1">
                 <h3 class="h-step" >1</h3>
-                <div class="step-odd"><p>Na primeira etapa são estimados os custos e prazos através de uma reunião </p> </div>
+                <div class="step-odd"><p>Começamos com uma <u>reunião</u> para falar de prazos e valor do investimento</p> </div>
                 <hr id="hr1">
                 <h3 class="h-step" >2</h3>
-                <div class="step"><p>Aqui o projeto ganha vida com os protótipos de todas as telas do software </p></div>
+                <div class="step"><p>Antes do início especificamos todas as telas do projeto <u>sem cobrar</u> por isto </p></div>
                 <hr id="hr1">
                 <h3 class="h-step" >3</h3>
-                <div class="step-odd"><p>Com entregas continuadas o software é disponibilizado à medida que é feito</p></div>
+                <div class="step-odd"><p>Desenvolvimento com <u>entregas</u> continuadas no servidor de hospeagem desde o primeiro instante</p></div>
                 <hr id="hr1">
                 <h3 class="h-step" >4</h3>
-                <div class="step"><p>Após concluído e entregue, alterações ainda podem ser feitas sem custos adicionais</p></div>
+                <div class="step"><p>Modificações e manutenção por 3 meses <u>grátis</u> após finalizado </p></div>
             </div>
             <div class="text-center" >
             <img style="max-width: 70%; height:auto; opacity: 0.8; transform: scale(-1);" src="<?php echo esc_attr(get_template_directory_uri() . '/imgs/decoration-pattern.png'); ?>">
@@ -167,7 +175,7 @@
 
             <div class="text-center get-info" >
                 <button class="btn btn-primary" style="margin-bottom: 2vh !important;" >
-                <a><span class="btn-span">&nbsp;&nbsp;<?php echo esc_html(get_theme_mod('set_action_btn','Saber+'));?>&#128640; </span></a>
+                <a><span class="btn-span"><?php echo esc_html(get_theme_mod('set_action_btn','Saber +'));?>&nbsp;</span></a>
                 </button>
             </div>   
         </section>

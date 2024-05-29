@@ -1,13 +1,13 @@
 <?php esc_html(get_header());?>
 <?php $categories = get_the_category(); ?>
-<section class="middle-area main-single" id="primary">
+<section class="middle-area main-single row" id="primary">
 <nav class="progressbar d-none d-sm-block"></nav>
     <main id="main-single">
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="breadcrumb col-md-8">
+        <div class="col-2"></div>
+        <div class="breadcrumb col-8">
         <span class="addr-crumb">
-            <a>Blog</a>&nbsp;/&nbsp;
+            <a href=" http://localhost/devcaiorodrig/blog">Blog</a>&nbsp;/&nbsp;
             
             <?php
             if ($categories) {

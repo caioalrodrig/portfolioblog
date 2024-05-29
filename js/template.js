@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardP = document.querySelector('.reveal-p');
    
     const search = document.querySelector('.search-form');
-    const head = document.getElementById('t1');
+    const head = document.getElementById('t2');
     const content = "Tecnologias que impulsionam"
 
     const services = document.querySelector('.services');
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const numbs = document.querySelectorAll('.h-step');
 
     let page = 0;
-    /**/
     function definePage(){
+
         var currentPage = window.location.href;
         var menuLinks = document.querySelectorAll(".menu a");
         var menuLinksFooter = document.querySelectorAll('.nav-footer-menu a'); 
@@ -34,10 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         menuLinksFooter[page].classList.add("current-page");
         menuLinks[page].classList.add("current-page");
-
     }
     definePage();
+
     function typewriteName(index) {
+
         head.innerHTML += content[index];
         if (index < content.length - 1) {
           setTimeout( () => {
@@ -45,9 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 50); 
         }
     }
-
-    head.innerHTML = '';
-    typewriteName(0);
 
     var backToTopBtn = document.getElementById("backToTopBtn");    
     let debounceTimeout;
@@ -59,15 +57,25 @@ document.addEventListener('DOMContentLoaded', () => {
         debounceTimeout = setTimeout(func, delay);
     }
 
+    let once = 0;
     function handleScroll() {
-        var y = window.scrollY;
+
         if (onScroll === 0){
+
             onScroll = 1;
+            var y = window.scrollY;
+            //animation LP1
+            if (once === 0 && page === 0 && y> 0.3 * yTotal){
+                once = 1;
+                head.innerHTML = '';
+                typewriteName(0);
+            }
+            //animation LP2
             if (y > 0.3 * yTotal) {
                 numbs[0].classList.add("show-animate")
-                if (y > 0.45 * yTotal){ 
+                if (y > 0.4 * yTotal){ 
                     numbs[1].classList.add("show-animate");
-                    if (y > 0.5 * yTotal){ 
+                    if (y > 0.45 * yTotal){ 
                         numbs[2].classList.add("show-animate");
                         if (y > 0.55 * yTotal) numbs[3].classList.add("show-animate");
                     }
@@ -83,15 +91,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleScroll1() {
-        if ( window.scrollY > 200){
-            divs[0].classList.add("show-animate");
-            divs[1].classList.add("show-animate");
-            setTimeout(() =>{
+        //animation LP0
+        if ( page !== 0 ) return;
+        if ( window.innerWidth > 767 ){
+            if ( window.scrollY > 0.03* yTotal ){
+
+                divs[0].classList.add("show-animate");
+                divs[1].classList.add("show-animate");
+                if ( window.scrollY >  0.07 * yTotal ){
                     divs[2].classList.add("show-animate");
                     divs[3].classList.add("show-animate");
-            }, 1000);
+                }
+                backToTopBtn.style.display = "block";
+            } else backToTopBtn.style.display = "none";
+            return;
+        } 
+        if ( window.scrollY > 0.07* yTotal ){
+
+            divs[0].classList.add("show-animate");
+            divs[1].classList.add("show-animate");
+            if ( window.scrollY >  0.15 * yTotal ){
+                divs[2].classList.add("show-animate");
+                divs[3].classList.add("show-animate");
+            }
             backToTopBtn.style.display = "block";
         } else backToTopBtn.style.display = "none";
+        return;
     }
         
 
@@ -115,7 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (page === 1){
-        window.addEventListener('scroll', handleScroll2);        
+        window.addEventListener('scroll', handleScroll2);      
+        backToTopBtn.style.display = "block";
+  
     } 
 
     backToTopBtn.addEventListener("click", function() {

@@ -2,12 +2,12 @@
 <div> 
     <main class="main-blog">
     <section class="row blog-area middle-area">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 ">
+        <div class="col-2"></div>
+        <div class="col-8 ">
         <section class="blog-posts">
             <div class="breadcrumb">
                 <span class="addr-crumb">
-                    <a>Blog</a>&nbsp;/
+                    <a href="http://localhost/devcaiorodrig/blog">Blog</a>&nbsp;/
                 </span>
             </div>     
             <div class="row">

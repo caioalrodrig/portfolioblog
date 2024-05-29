@@ -6,17 +6,17 @@
 <main class="main-blog">
     <section class="middle-area blog-area row" >
         <div class="col-md-2"></div>
-        <div class="contact-area col-sm-12 col-md-7"  id="contact-div">
-            <div class="column contact-area">
-                <h1 class="title blog-upper" style="padding-left: 9px;"> <?php _e('Entre em contato conosco', 'portfolioblog'); ?></h1>
+        <div class="contact-area col-sm-12 col-md-7 column"  id="contact-div">
+            <div class="contact-area-before"  id="contact-div" style="padding-left:20vw;">
+                <img src="<?php echo $image_url ?>" style="min-width: 200px; width: 20vw;"/>
+            </div>
+            <div class="column">
+                <h1 class="contact-header" style="padding-left: 9px;"> <?php _e('Entre em contato conosco', 'portfolioblog'); ?></h1>
                 <!-- Chamar o get_mod -->
             </div >
             <div class="contact-div">
             <?php esc_html(get_sidebar('home'));?> <!-- formulario de contato widget -->
             </div>
-        </div>
-        <div class="contact-area col-sm-12 col-md-2"  id="contact-div" style="transform: translateX(-25vw) translateY(5vw); z-index:99;">
-            <img class="d-none d-md-block" src="<?php echo $image_url ?>" style="width: 20vw;transform: translateX(200px);"/>
         </div>
         <nav class="navbar blog-sidebar">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="margin-left: 50% !important;">
