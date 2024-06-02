@@ -71,13 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 typewriteName(0);
             }
             //animation LP2
-            if (y > 0.3 * yTotal) {
+            if (y > 0.4 * yTotal) {
                 numbs[0].classList.add("show-animate")
-                if (y > 0.4 * yTotal){ 
+                if (y > 0.5 * yTotal){ 
                     numbs[1].classList.add("show-animate");
-                    if (y > 0.45 * yTotal){ 
+                    if (y > 0.55 * yTotal){ 
                         numbs[2].classList.add("show-animate");
-                        if (y > 0.55 * yTotal) numbs[3].classList.add("show-animate");
+                        if (y > 0.6 * yTotal) numbs[3].classList.add("show-animate");
                     }
                 }
             }

@@ -22,7 +22,7 @@
     </div>
     <div class="column col-md-3 footer-wrapper text-center" >
         <h2 class="h2-footer">Sobre</h2>
-        <p style="margin-bottom: 0 !important; margin-left: 10%;">Rato de academia apaixonado por aprender coisas novas. Atualmente mestrando em Ciência da Computação e em busca de recolocação profissional</p>
+        <p style="margin-bottom: 0 !important; margin-left: 10%;">Rato de academia apaixonado por aprender coisas novas Atualmente mestrando em Ciência da Computação e em busca de recolocação profissional</p>
         
     </div>
     <div class="column col-md-3 footer-wrapper text-center">

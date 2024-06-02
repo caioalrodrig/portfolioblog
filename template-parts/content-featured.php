@@ -14,8 +14,8 @@
         </div>
         <div class="col-1 vline"></div>
         <div class="column col-5" style="padding:2px !important;">
-        <label class="blog-lb">Tags</label>
-        <p class="meta-info-p"><?php the_tags('<span>','', '</span>'); ?></p>
+        <label class="blog-lb">Categoria</label>
+        <p class="meta-info-p"><?php the_category(','); ?></p>
         </div>        
     </div>
     <?php the_excerpt(); ?>

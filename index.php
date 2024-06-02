@@ -2,8 +2,8 @@
 <div> 
     <main class="main-blog">
     <section class="row blog-area middle-area">
-        <div class="col-2"></div>
-        <div class="col-8 ">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 ">
         <section class="blog-posts">
             <div class="breadcrumb">
                 <span class="addr-crumb">
@@ -63,7 +63,7 @@
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Blog</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Categorias</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
