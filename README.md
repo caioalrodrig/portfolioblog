@@ -8,6 +8,6 @@
   <li>Suporte a tradução &#10004;&#65039;</li>
   <li>Testes unitários (Theme Check) &#10004;&#65039; </li>
   <li>Publicação no Repositorio Wordpress 🔜 </li>
-  <li>Testes em produção (desempenho, SEO) 🔜 </li>
+  <li>Testes em produção (desempenho, SEO) &#10004;&#65039; </li>
 
 </ul>
